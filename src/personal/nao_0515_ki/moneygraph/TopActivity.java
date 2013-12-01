@@ -1,5 +1,6 @@
-package personal.nao_0515_ki.onehundredyenperanhour;
+package personal.nao_0515_ki.moneygraph;
 
+import personal.nao_0515_ki.onehundredyenperanhour.R;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;

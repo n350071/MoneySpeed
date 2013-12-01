@@ -1,4 +1,4 @@
-package personal.nao_0515_ki.onehundredyenperanhour;
+package personal.nao_0515_ki.moneygraph;
 
 import android.content.Context;
 import android.util.Log;
