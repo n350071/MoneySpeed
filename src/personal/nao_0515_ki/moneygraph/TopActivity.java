@@ -22,10 +22,10 @@ public class TopActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.dashboard);
 
-		//Contextの取得
+		//get context
 		Context context = getApplicationContext();
 		
-		//ボタンクリックリスナーの関連付け
+		//relate button click listener
 		Button insertButton = (Button)findViewById(R.id.Done);
 		Button removeLatestInput = (Button)findViewById(R.id.RemoveLatestInput);
 		Button removeAllData = (Button)findViewById(R.id.Remove);
@@ -45,37 +45,37 @@ public class TopActivity extends Activity {
 		//TableCreate
 		touchDB.createTable();
 
-		//画面情報の取得
+		//get info on view
 		TextView yenPerHourOn1Hour = (TextView)findViewById(R.id.yenPerHourOn1Hour);
 		TextView yenPerHourOn24Hour = (TextView)findViewById(R.id.yenPerHourOn24Hour);
 		TextView forecast1day = (TextView)findViewById(R.id.forecast1day);
 		TextView forecast1month = (TextView)findViewById(R.id.forecast1month);
 		TextView input_money = (TextView)findViewById(R.id.input_money);
 
-		//Actionクラス生成
+		//create Action Class
 		action = new Action(context,touchDB,yenPerHourOn1Hour,yenPerHourOn24Hour,forecast1day,forecast1month,input_money);
 		action.viewSpeed();
 
 	}
 		
-	//doneボタンのメソッド
+	//method of done
 	class ButtonClickListener implements OnClickListener {
 
 		@Override
 		public void onClick(View arg0) {
 			// TODO Auto-generated method stub
-			// どのボタンが押されたかをbuttonNameに詰め込む
+			// what button pushed 
 			String buttonName = (String)arg0.getTag();
 			Log.d("Button Clicked as :", buttonName);
 
-			//Buttonが押されたときの情報を取得
+			//get info for button pushed
 			EditText money = (EditText)findViewById(R.id.input_money);
-			//あとで修正(input_money to input_memo)
+			//refactor later(input_money to input_memo)
 			EditText memo = (EditText)findViewById(R.id.input_money);
 
 			
-			//押されたボタンの内容によってactionを変える←次のリファクタリングで変更する
-			//Doneが押された場合
+			//Refactor
+			//in the case of pushed Done
 			if(buttonName.contains("Done")){
 				action.doneAction(money.getText().toString(), memo.getText().toString());
 			}else if(buttonName.contains("RemoveLatestInput")){

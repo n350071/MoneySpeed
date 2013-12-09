@@ -74,7 +74,7 @@ public class TouchDB  {
 	}
 
 	public void insert(String money, String memo){
-		//トランザクション制御開始
+		//transaction
 		database.beginTransaction();
 		
 		String sql
@@ -84,12 +84,12 @@ public class TouchDB  {
 		database.execSQL(sql);
 		database.setTransactionSuccessful();
 
-		//トランザクション制御終了
+		//transaction
 		database.endTransaction();
 	}
 	
 	public Cursor selectMoneyFromWhen(String when){
-		//トランザクション制御開始
+		//transaction
 		database.beginTransaction();
 
 		String sql
@@ -101,7 +101,7 @@ public class TouchDB  {
 		
 		Cursor cursor = database.rawQuery(sql,null);  
 		
-		//トランザクション制御終了
+		//transaction
 		database.endTransaction();
 		
 		return cursor;

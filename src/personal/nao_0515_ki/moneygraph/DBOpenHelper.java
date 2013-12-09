@@ -5,16 +5,16 @@ import android.database.sqlite.*;
 
 public class DBOpenHelper extends SQLiteOpenHelper {
 
-	//コンストラクタ定義
+	//define constracter
 	public DBOpenHelper(Context context){
 		super(context,"moneyDB",null,1);
 	}
 	
-	//onCreateメソッド
+	//onCreate method
 	public void onCreate(SQLiteDatabase database){
 	}
 	
-	//onUpgradeメソッド
+	//onUpgrade medhod
 	public void onUpgrade(SQLiteDatabase database, int oldversion, int newversion){
 	}
 
