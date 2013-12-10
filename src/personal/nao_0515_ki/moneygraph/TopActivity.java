@@ -22,7 +22,7 @@ public class TopActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.dashboard);
 
-		//get context
+		//get contexts
 		Context context = getApplicationContext();
 		
 		//relate button click listener
